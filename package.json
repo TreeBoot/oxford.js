@@ -20,6 +20,9 @@
     },
     "./permissions": {
       "import": "./permissions.js"
+    },
+    "./managers":{
+      "import": "./managers,js"
     }
   },
 

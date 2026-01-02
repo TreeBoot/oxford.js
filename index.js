@@ -52,6 +52,11 @@ export default class OXFDClient {
       getKillLogs() { return this.request("/server/killlogs"); }
       getCommandLogs() { return this.request("/server/commandlogs"); }
       getModCalls() { return this.request("/server/modcalls"); }
+      getVehicles() { return this.request("/server/vehicles"); }
+      getRobberies() { return this.request("/server/robberies"); }
+      getRadioCalls() {return this.request("/server/radiocalls");}
+      getJoinLogs() { return this.request("/server/joinlogs");}
+
 
       executeCommand(command) {
         if (!command) throw new Error('Command is required');
