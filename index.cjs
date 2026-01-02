@@ -1,4 +1,5 @@
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+const { Server, Logs, Commands } = require("./managers.js")
 
 class OXFDClient {
   constructor(apiKey, options = {}) {
@@ -8,6 +9,9 @@ class OXFDClient {
     this.baseURL = options.baseURL || "https://api.oxfd.re/v1";
     this.timeout = options.timeout || 10000;
     this.maxRetries = options.maxRetries || 3;
+    this.servers = new Servers(this);
+    this.logs = new Logs(this);
+    this.commands = new Commands(this);
   }
 
   async request(endpoint, method = "GET", body = null, attempt = 0) {

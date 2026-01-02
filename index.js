@@ -1,4 +1,5 @@
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+import { Servers, Logs, Commands } from "./managers.js";
 
 export default class OXFDClient {
     constructor(apiKey, options = {}) {
@@ -8,7 +9,10 @@ export default class OXFDClient {
         this.apiKey = apiKey;
         this.baseUrl = options.baseUrl || 'https://api.oxfd.re/v1';
         this.timeout = options.timeout || 10000; //10 seconds
-        this.maxRe
+        this.maxRetries = options.maxRetries || 3;
+        this.servers = new Servers(this);
+        this.logs = new Logs(this);
+        this.commands = new Commands(this);
     }
 
     async request(endpoint, method = "GET", body = null, attempt = 0) {
