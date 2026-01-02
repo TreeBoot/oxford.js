@@ -1,0 +1,38 @@
+{
+  "name": "oxfd.js",
+  "version": "1.2.0",
+  "description": "JavaScript API wrapper for the OXFD API with Discord.js helpers, permissions, and rate-limit handling",
+  "author": "TreeBot",
+  "license": "MIT",
+
+  "type": "module",
+
+  "main": "./index.cjs",
+  "module": "./index.js",
+
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./discord": {
+      "import": "./discord.js"
+    },
+    "./permissions": {
+      "import": "./permissions.js"
+    }
+  },
+
+  "keywords": [
+    "oxfd",
+    "erlc",
+    "roblox",
+    "discord",
+    "api",
+    "wrapper"
+  ],
+
+  "engines": {
+    "node": ">=18"
+  }
+}
